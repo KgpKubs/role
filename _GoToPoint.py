@@ -1,6 +1,6 @@
 from kubs import kubs, cmd_node
-from pid.run import *
-from pid.run_w import *
+from velocity.run import *
+from velocity.run_w import *
 import rospy,sys
 from krssg_ssl_msgs.msg import point_2d
 from krssg_ssl_msgs.msg import BeliefState
