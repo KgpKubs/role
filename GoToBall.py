@@ -88,7 +88,8 @@ class GoToBall(behavior.Behavior):
         pass
 
     def on_enter_near(self):
-        _GoToPoint.init(self.kub, self.kub.state.ballPos, 0.0)
+        theta = self.kub.homePos[self.kub.kubs_id].theta
+        _GoToPoint.init(self.kub, self.kub.state.ballPos, theta)
         pass
 
     def execute_near(self):
