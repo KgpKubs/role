@@ -19,12 +19,11 @@ class GoToBall(behavior.Behavior):
     ## @param      theta       The theta
     ## @param      continuous  The continuous
     ##
-    def __init__(self,kub,theta,continuous=False):
+    def __init__(self,continuous=False):
 
         super(GoToBall,self).__init__()
-        self.kub = kub
+        # self.kub = kub
 
-        self.theta = theta
 
         self.add_state(GoToBall.State.setup,
             behavior.Behavior.State.running)
@@ -52,7 +51,13 @@ class GoToBall(behavior.Behavior):
 
         self.add_transition(GoToBall.State.near,
             behavior.Behavior.State.completed,lambda:self.at_ball_pos(),'complete')
+    
+    def add_kub(self,kub):
+        self.kub = kub
 
+    def add_theta(self,theta):
+        self.theta = theta
+    
     def target_present(self):
         return self.target_point is not None
 
